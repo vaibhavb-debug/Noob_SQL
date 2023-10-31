@@ -1,1 +1,41 @@
-Create databases
+show databases;
+
+create DATABASE NOOB;
+
+use NOOB;
+
+create table if not exists emp
+(
+    id INT,
+    name varchar(20),
+    salary DOUBLE,
+    hir_date DATE
+);
+
+show tables;
+drop table emp;
+
+SELECT * from emp;
+
+show create table emp;
+
+insert into emp values(1,"Vaibhav",1000,'2021-09-15'),(2,"Kajal",5000,'2021-07-15');
+
+insert into emp(salary,name,id) values(7000,"Omkar",3);
+
+insert into emp values(4,"Amit",6000,'2021-10-28'),(6,"Nitin",4000,'2021-08-17');
+
+SELECT name,salary from emp;
+
+
+create table if not exists emp_with_constraints
+(
+    id INT,
+    name varchar(50) NOT NULL,
+    salary DOUBLE,
+    hiring_date DATE DEFAULT '2021-01-01',
+    UNIQUE (id),
+    CHECK (salary>1000)
+);
+
+show tables;
